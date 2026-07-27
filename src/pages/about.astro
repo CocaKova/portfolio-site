@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <div class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-light tracking-[0.1em] mb-8">About</h1>
+    <div class="space-y-6 text-sm text-text-secondary leading-relaxed">
+      <p>
+        I'm a builder. L2 IT support by day, local AI lab operator by night.
+        I build and document infrastructure that puts privacy and sovereignty first —
+        no cloud dependencies, no telemetry, full control.
+      </p>
+
+      <p>
+        My focus is on making private AI accessible and practical. I run a full
+        DGX Spark lab (121.7 GB unified memory, ARM64) with Hermes Agent, Proxmox,
+        Home Assistant, and various GPU-accelerated services. Everything runs locally.
+      </p>
+
+      <h2 class="text-sm font-normal tracking-[0.15em] uppercase text-teal mt-8 mb-4">What I Do</h2>
+      <ul class="space-y-2">
+        <li class="flex items-start gap-3">
+          <span class="text-teal mt-0.5">▸</span>
+          <span>Private AI infrastructure — hardware selection, model configuration, training, and ongoing support for privacy-conscious clients</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-teal mt-0.5">▸</span>
+          <span>Infrastructure tooling — dashboards, automation, home lab management (Proxmox, Home Assistant, Tesla)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-teal mt-0.5">▸</span>
+          <span>Mobile development — native Android apps (Kotlin/Compose), primarily for Matrix/chat clients</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-teal mt-0.5">▸</span>
+          <span>Technical documentation — lab writeups, benchmarks, and case studies</span>
+        </li>
+      </ul>
+
+      <h2 class="text-sm font-normal tracking-[0.15em] uppercase text-teal mt-8 mb-4">Stack</h2>
+      <div class="flex flex-wrap gap-2">
+        <span class="tag">Python</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">React</span>
+        <span class="tag">Kotlin</span>
+        <span class="tag">Proxmox</span>
+        <span class="tag">Home Assistant</span>
+        <span class="tag">Ubuntu</span>
+        <span class="tag">Tailscale</span>
+        <span class="tag">Matrix</span>
+        <span class="tag">Docker</span>
+      </div>
+
+      <h2 class="text-sm font-normal tracking-[0.15em] uppercase text-teal mt-8 mb-4">Find Me</h2>
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/CocaKova" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/TheLocalPeer" class="nav-link" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="mailto:jonathan.kovacs999@gmail.com" class="nav-link">Email</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

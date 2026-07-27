@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<BaseLayout>
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    <div class="mb-12">
+      <h1 class="text-3xl font-light tracking-[0.1em] mb-4">Projects</h1>
+      <p class="text-text-secondary max-w-2xl">
+        A showcase of work — infrastructure tools, mobile apps, local AI labs, and everything in between.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ProjectCard
+        title="Sovereign Spire"
+        description="JARVIS-style infrastructure dashboard built on React + Vite + Express/TypeScript. Integrates Proxmox, Home Assistant, Tesla Fleet API, and voice AI."
+        tags={["React", "TypeScript", "Vite", "Proxmox", "Home Assistant"]}
+        github="https://github.com/CocaKova/sovereign-spire"
+      />
+      <ProjectCard
+        title="Hermes Agent"
+        description="Local AI partner framework with multi-platform communication, persistent memory, tool integration, and autonomous task execution."
+        tags={["Python", "AI", "Automation", "Matrix"]}
+        github="https://github.com/CocaKova/hermes-agent"
+      />
+      <ProjectCard
+        title="Keryx"
+        description="Hermes Chat — a native Android Matrix client for talking to SILAS. Built with Kotlin/Compose, featuring real-time messaging and tool integration."
+        tags={["Kotlin", "Android", "Compose", "Matrix"]}
+        github="https://github.com/CocaKova/keryx"
+      />
+      <ProjectCard
+        title="Keryx Stream"
+        description="SSE side-channel streaming plugin for Hermes chat gateway. Real-time message delivery with minimal latency."
+        tags={["Python", "SSE", "WebSocket", "Hermes"]}
+        github="https://github.com/CocaKova/keryx-stream"
+      />
+      <ProjectCard
+        title="Local AI Install Service"
+        description="Private AI setup service for privacy-conscious professionals. Full stack deployment: hardware selection, model configuration, training, and ongoing support."
+        tags={["Local AI", "Private", "Setup Service"]}
+      />
+      <ProjectCard
+        title="HyperFrames"
+        description="HTML-to-video framework. Compose videos with HTML/CSS/JS, render with Playwright or Docker. Used for video production pipeline."
+        tags={["HTML", "CSS", "Video", "Docker"]}
+      />
+    </div>
+  </div>
+</BaseLayout>
