@@ -1,136 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projects — Jonathan Kovacs">
-  <title>Projects — CocaKova</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    :root { --bg-primary: #0a0a0a; --bg-secondary: #111; --text-primary: #e0e0e0; --text-secondary: #888; --teal: #00ffcc; --gold: #f0a030; }
-    * { border-color: rgba(255,255,255,0.08); }
-    body { background: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', system-ui, sans-serif; }
-    a { color: var(--teal); transition: color 0.2s; }
-    a:hover { color: var(--gold); }
-    .glass { background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); }
-    .card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.5rem; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
-    .card:hover { border-color: rgba(0,255,204,0.3); box-shadow: 0 0 20px rgba(0,255,204,0.05); }
-    .tag { display: inline-block; font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; padding: 0.2rem 0.5rem; border-radius: 0.25rem; background: rgba(240,160,48,0.1); color: var(--gold); border: 1px solid rgba(240,160,48,0.2); }
-    .link { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; text-decoration: none; }
-    .link:hover, .link.active { color: var(--teal); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — CocaKova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a; --bg2: #111; --text: #e0e0e0; --text2: #888;
+  --teal: #00ffcc; --gold: #f0a030; --border: rgba(255,255,255,0.08);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+a { color: var(--teal); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--gold); }
+nav { position: sticky; top: 0; z-index: 50; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 80rem; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1rem; font-weight: 300; letter-spacing: 0.1em; color: var(--teal); text-transform: uppercase; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text2); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--teal); }
+.hamburger { display: none; background: none; border: none; color: var(--text2); font-size: 1.2rem; cursor: pointer; }
+@media (max-width: 640px) { .nav-links { display: none; } .hamburger { display: block; } }
+.container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
+main { flex: 1; padding: 3rem 0; }
+.glass-card { background: rgba(17,17,17,0.8); border: 1px solid var(--border); border-radius: 0.5rem; padding: 1.5rem; transition: border-color 0.3s, box-shadow 0.3s; }
+.glass-card:hover { border-color: rgba(0,255,204,0.3); box-shadow: 0 10px 15px -3px rgba(0,255,204,0.05); }
+.tag { display: inline-block; font-size: 10px; font-family: 'JetBrains Mono', monospace; padding: 0.125rem 0.5rem; border-radius: 0.25rem; background: rgba(240,160,48,0.1); color: var(--gold); border: 1px solid rgba(240,160,48,0.2); letter-spacing: 0.02em; }
+.section-title { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.5rem; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.font-medium { font-weight: 500; }
+.text-text-secondary { color: var(--text2); }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-8 { gap: 2rem; }
+.mb-0 { margin-bottom: 0; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mb-16 { margin-bottom: 4rem; }
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.leading-relaxed { line-height: 1.625; }
+.tracking-\[0\.1em\] { letter-spacing: 0.1em; }
+.uppercase { text-transform: uppercase; }
+.footer-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { color: var(--text2); transition: color 0.2s; }
+.footer-links a:hover { color: var(--teal); }
+footer { border-top: 1px solid var(--border); padding: 2rem 0; margin-top: auto; }
+</style>
 </head>
-<body class="min-h-screen flex flex-col">
-  <nav class="sticky top-0 z-50 glass border-b border-white/5">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-lg font-light tracking-[0.1em] text-teal hover:text-gold transition-colors">CocaKova</a>
-      <div class="flex items-center gap-8">
-        <a href="index.html" class="link">Home</a>
-        <a href="projects.html" class="link active">Projects</a>
-        <a href="reports.html" class="link">Reports</a>
-        <a href="about.html" class="link">About</a>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">CocaKova</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects.html" class="active">Projects</a></li>
+      <li><a href="/reports.html">Reports</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('nav-menu').classList.toggle('hidden')" aria-label="Menu">☰</button>
+  </div>
+  <div id="nav-menu" class="hidden flex-col gap-2 p-4" style="max-width:80rem;margin:0 auto;display:none;">
+    <a href="/" class="block py-2 text-sm" style="color:var(--text2);text-decoration:none;">Home</a>
+    <a href="/projects.html" class="block py-2 text-sm" style="color:var(--teal);text-decoration:none;">Projects</a>
+    <a href="/reports.html" class="block py-2 text-sm" style="color:var(--text2);text-decoration:none;">Reports</a>
+    <a href="/about.html" class="block py-2 text-sm" style="color:var(--text2);text-decoration:none;">About</a>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    <h1 class="section-title mb-12">Projects</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card">
+        <h3 class="text-sm font-medium tracking-[0.1em] mb-2">Sovereign Spire</h3>
+        <p class="text-xs text-text-secondary leading-relaxed mb-3">JARVIS-style infrastructure dashboard. Proxmox, Home Assistant, Tesla, and voice AI — all in one React dashboard.</p>
+        <div class="flex items-center gap-2 flex-wrap mb-3"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Proxmox</span><span class="tag">Home Assistant</span></div>
+        <a href="https://github.com/CocaKova/sovereign-spire" class="text-xs text-text-secondary hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+      <div class="glass-card">
+        <h3 class="text-sm font-medium tracking-[0.1em] mb-2">Hermes Agent</h3>
+        <p class="text-xs text-text-secondary leading-relaxed mb-3">Local AI partner framework with multi-platform communication, persistent memory, tool integration, and autonomous task execution.</p>
+        <div class="flex items-center gap-2 flex-wrap mb-3"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Automation</span></div>
+        <a href="https://github.com/CocaKova/hermes-agent" class="text-xs text-text-secondary hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+      <div class="glass-card">
+        <h3 class="text-sm font-medium tracking-[0.1em] mb-2">Keryx Stream</h3>
+        <p class="text-xs text-text-secondary leading-relaxed mb-3">SSE side-channel streaming plugin for Hermes chat gateway. Real-time message delivery with minimal latency.</p>
+        <div class="flex items-center gap-2 flex-wrap mb-3"><span class="tag">Python</span><span class="tag">SSE</span><span class="tag">WebSocket</span></div>
+        <a href="https://github.com/CocaKova/keryx-stream" class="text-xs text-text-secondary hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+      <div class="glass-card">
+        <h3 class="text-sm font-medium tracking-[0.1em] mb-2">Keryx</h3>
+        <p class="text-xs text-text-secondary leading-relaxed mb-3">Hermes Chat — Android Matrix client. Kotlin/Compose native app for talking to SILAS.</p>
+        <div class="flex items-center gap-2 flex-wrap mb-3"><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Matrix</span></div>
+        <a href="https://github.com/CocaKova/keryx" class="text-xs text-text-secondary hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
       </div>
     </div>
-  </nav>
-
-  <main class="flex-1">
-    <div class="max-w-5xl mx-auto px-6 py-12">
-      <div class="mb-12">
-        <h1 class="text-3xl font-light tracking-[0.1em] mb-4">Projects</h1>
-        <p class="text-[var(--text-secondary)] max-w-2xl">
-          A showcase of work — infrastructure tools, mobile apps, local AI labs, and everything in between.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="card">
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-medium tracking-wide">Sovereign Spire</h3>
-            <span class="tag">Active</span>
-          </div>
-          <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-3">JARVIS-style infrastructure dashboard built on React + Vite + Express/TypeScript. Integrates Proxmox, Home Assistant, Tesla Fleet API, and voice AI.</p>
-          <div class="flex items-center gap-2 flex-wrap mb-3">
-            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Proxmox</span><span class="tag">Home Assistant</span>
-          </div>
-          <a href="https://github.com/CocaKova/sovereign-spire" class="text-xs text-[var(--text-secondary)] hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-
-        <div class="card">
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-medium tracking-wide">Hermes Agent</h3>
-            <span class="tag">Active</span>
-          </div>
-          <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-3">Local AI partner framework with multi-platform communication, persistent memory, tool integration, and autonomous task execution.</p>
-          <div class="flex items-center gap-2 flex-wrap mb-3">
-            <span class="tag">Python</span><span class="tag">AI</span><span class="tag">Automation</span><span class="tag">Matrix</span>
-          </div>
-          <a href="https://github.com/CocaKova/hermes-agent" class="text-xs text-[var(--text-secondary)] hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-
-        <div class="card">
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-medium tracking-wide">Keryx Stream</h3>
-            <span class="tag">Active</span>
-          </div>
-          <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-3">SSE side-channel streaming plugin for Hermes chat gateway. Real-time message delivery with minimal latency.</p>
-          <div class="flex items-center gap-2 flex-wrap mb-3">
-            <span class="tag">Python</span><span class="tag">SSE</span><span class="tag">WebSocket</span>
-          </div>
-          <a href="https://github.com/CocaKova/keryx-stream" class="text-xs text-[var(--text-secondary)] hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-
-        <div class="card">
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-medium tracking-wide">Keryx</h3>
-            <span class="tag">Active</span>
-          </div>
-          <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-3">Hermes Chat — a native Android Matrix client for talking to SILAS. Built with Kotlin/Compose, featuring real-time messaging and tool integration.</p>
-          <div class="flex items-center gap-2 flex-wrap mb-3">
-            <span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Compose</span><span class="tag">Matrix</span>
-          </div>
-          <a href="https://github.com/CocaKova/keryx" class="text-xs text-[var(--text-secondary)] hover:text-teal" target="_blank" rel="noopener">GitHub →</a>
-        </div>
-
-        <div class="card">
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-medium tracking-wide">Local AI Install Service</h3>
-            <span class="tag">Service</span>
-          </div>
-          <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-3">Private AI setup service for privacy-conscious professionals. Full stack deployment: hardware selection, model configuration, training, and ongoing support.</p>
-          <div class="flex items-center gap-2 flex-wrap mb-3">
-            <span class="tag">Local AI</span><span class="tag">Private</span><span class="tag">Setup Service</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-sm font-medium tracking-wide">HyperFrames</h3>
-            <span class="tag">Active</span>
-          </div>
-          <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-3">HTML-to-video framework. Compose videos with HTML/CSS/JS, render with Playwright or Docker. Used for video production pipeline.</p>
-          <div class="flex items-center gap-2 flex-wrap mb-3">
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Video</span><span class="tag">Docker</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer class="border-t border-white/5 mt-auto">
-    <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-[var(--text-secondary)]">© 2026 Jonathan Kovacs. Built locally.</p>
-      <div class="flex items-center gap-6">
-        <a href="https://github.com/CocaKova" target="_blank" rel="noopener" class="text-[var(--text-secondary)] hover:text-teal">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-        </a>
-        <a href="https://x.com/TheLocalPeer" target="_blank" rel="noopener" class="text-[var(--text-secondary)] hover:text-teal">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-        </a>
-      </div>
-    </div>
-  </footer>
+  </div>
+</main>
+<footer><div class="footer-inner"><p class="text-sm text-text-secondary">© 2026 Jonathan Kovacs. Built locally.</p><div class="footer-links"><a href="https://github.com/CocaKova" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/TheLocalPeer" target="_blank" rel="noopener">X</a></div></div></footer>
+<script>document.querySelector('.hamburger').addEventListener('click', function() { var m = document.getElementById('nav-menu'); m.style.display = m.style.display === 'none' ? '' : m.style.display === '' ? 'none' : 'none'; m.classList.toggle('hidden'); });</script>
 </body>
 </html>
