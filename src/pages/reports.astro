@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ReportCard from '../components/ReportCard.astro';
+---
+
+<BaseLayout>
+  <div class="max-w-3xl mx-auto px-6 py-12">
+    <div class="mb-12">
+      <h1 class="text-3xl font-light tracking-[0.1em] mb-4">Reports</h1>
+      <p class="text-text-secondary max-w-2xl">
+        Technical writeups, benchmark results, and case studies from the lab.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <ReportCard
+        title="Model Comparison: Qwen 2.5 vs Llama 3 on Spark"
+        summary="Benchmarks of top open models running on the DGX Spark. Latency, throughput, and hallucination rates compared across multiple tasks."
+        date="Jul 2026"
+        readTime="8 min"
+        tags={["benchmark", "llm", "local-ai"]}
+        slug="model-comparison"
+      />
+      <ReportCard
+        title="Proxmox Lab Setup: VM Inventory & Automation"
+        summary="Documenting the Proxmox infrastructure — 13 VMs, automation scripts, and recovery procedures for the home lab."
+        date="Jun 2026"
+        readTime="12 min"
+        tags={["proxmox", "devops", "automation"]}
+        slug="proxmox-lab"
+      />
+      <ReportCard
+        title="Local AI Installation: Client Case Study"
+        summary="Setting up private AI for a privacy-conscious business. Hardware selection, model configuration, and ongoing support."
+        date="May 2026"
+        readTime="15 min"
+        tags={["local-ai", "case-study", "privacy"]}
+        slug="ai-installation"
+      />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ReportCard from '../components/ReportCard.astro';
+---
+
+<BaseLayout>
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    {/* Hero */}
+    <section class="mb-16">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl sm:text-5xl font-light tracking-[0.05em] mb-4">Jonathan Kovacs</h1>
+        <p class="text-lg text-text-secondary leading-relaxed mb-6">
+          IT support specialist, builder, and local AI lab operator.
+          Documenting the build of private AI infrastructure on a DGX Spark,
+          and installing it for privacy-conscious professionals.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="/projects/" class="btn">
+            View Projects
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/reports/" class="btn">
+            Read Reports
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* Current Build */}
+    <section class="mb-16">
+      <h2 class="section-title">Current Build</h2>
+      <div class="glass-card">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-sm font-medium tracking-wide mb-1">DGX Spark Lab</h3>
+            <p class="text-xs text-text-secondary">NVIDIA GB10 Blackwell — 121.7 GB unified memory</p>
+          </div>
+          <span class="tag">Active</span>
+        </div>
+        <p class="text-sm text-text-secondary leading-relaxed">
+          Fully local AI lab running Hermes Agent, Proxmox, Home Assistant, and multiple
+          GPU-accelerated services. Documenting the setup, benchmarks, and failures.
+          No cloud dependencies. No telemetry.
+        </p>
+        <div class="flex items-center gap-4 mt-4 text-xs text-text-secondary">
+          <span class="flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-teal"></span>
+            Running
+          </span>
+          <span>Ubuntu 24.04 · Tailscale · ARM64</span>
+        </div>
+      </div>
+    </section>
+
+    {/* Recent Projects */}
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="section-title mb-0">Recent Projects</h2>
+        <a href="/projects/" class="text-sm text-teal hover:text-gold transition-colors tracking-wider uppercase">View All →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ProjectCard
+          title="Sovereign Spire"
+          description="JARVIS-style infrastructure dashboard. Proxmox, Home Assistant, Tesla, and voice AI — all in one React dashboard."
+          tags={["React", "TypeScript", "Proxmox", "Home Assistant"]}
+          github="https://github.com/CocaKova/sovereign-spire"
+        />
+        <ProjectCard
+          title="Hermes Agent"
+          description="Local AI partner framework with multi-platform communication, persistent memory, tool integration, and autonomous task execution."
+          tags={["Python", "AI", "Automation"]}
+          github="https://github.com/CocaKova/hermes-agent"
+        />
+        <ProjectCard
+          title="Keryx Stream"
+          description="SSE side-channel streaming plugin for Hermes chat gateway. Real-time message delivery with minimal latency."
+          tags={["Python", "SSE", "WebSocket"]}
+          github="https://github.com/CocaKova/keryx-stream"
+        />
+        <ProjectCard
+          title="Keryx"
+          description="Hermes Chat — Android Matrix client. Kotlin/Compose native app for talking to SILAS."
+          tags={["Kotlin", "Android", "Matrix"]}
+          github="https://github.com/CocaKova/keryx"
+        />
+      </div>
+    </section>
+
+    {/* Recent Reports */}
+    <section>
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="section-title mb-0">Recent Reports</h2>
+        <a href="/reports/" class="text-sm text-teal hover:text-gold transition-colors tracking-wider uppercase">View All →</a>
+      </div>
+      <div class="space-y-4">
+        <ReportCard
+          title="Model Comparison: Qwen 2.5 vs Llama 3 on Spark"
+          summary="Benchmarks of top open models running on the DGX Spark. Latency, throughput, and hallucination rates compared."
+          date="Jul 2026"
+          readTime="8 min"
+          tags={["benchmark", "llm", "local-ai"]}
+          slug="model-comparison-qwen-llama"
+        />
+        <ReportCard
+          title="Proxmox Lab Setup: VM Inventory & Automation"
+          summary="Documenting the Proxmox infrastructure — 13 VMs, automation scripts, and recovery procedures."
+          date="Jun 2026"
+          readTime="12 min"
+          tags={["proxmox", "devops", "automation"]}
+          slug="proxmox-lab-setup"
+        />
+        <ReportCard
+          title="Local AI Installation: Client Case Study"
+          summary="Setting up private AI for a privacy-conscious business. Hardware selection, configuration, and training."
+          date="May 2026"
+          readTime="15 min"
+          tags={["local-ai", "case-study", "privacy"]}
+          slug="local-ai-installation"
+        />
+      </div>
+    </section>
+  </div>
+</BaseLayout>
